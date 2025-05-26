@@ -115,17 +115,18 @@ public class ImportantWarningsWidget extends WidgetWithBounds {
 
         int textHeight = 10;
         int buttonSpacingGap = 6;
-        int doNotShowButtonAlignCenter = (int) (bounds.x + bounds.width / 2.0 - Minecraft.getInstance().font.width(doNotShowText) * 0.75 / 2);
-        int okayButtonAlignCenter = (int) (bounds.x + bounds.width / 2.0 - Minecraft.getInstance().font.width(okayText) * 0.75 / 2);
 
         this.doNotShowButtonBounds.setBounds(bounds.x, boundsMaxY - (textHeight * 2),
                 bounds.getMaxX(), textHeight);
         this.okayButtonBounds.setBounds(bounds.x, boundsMaxY - textHeight + buttonSpacingGap,
                 bounds.getMaxX(), textHeight - buttonSpacingGap);
 
+        int doNotShowButtonAlignCenter = (int) (bounds.x + bounds.width / 2.0f - Minecraft.getInstance().font.width(doNotShowText) * 0.75f / 2);
         graphics.drawString(Minecraft.getInstance().font, doNotShowText,
                 doNotShowButtonAlignCenter, -textHeight,
                 doNotShowButtonBounds.contains(mouseX, mouseY) ? 0xfffff8de : 0xAAFFFFFF);
+
+        int okayButtonAlignCenter = (int) (bounds.x + bounds.width / 2.0f - Minecraft.getInstance().font.width(okayText) * 0.75f / 2);
         graphics.drawString(Minecraft.getInstance().font, okayText,
                 okayButtonAlignCenter, buttonSpacingGap,
                 okayButtonBounds.contains(mouseX, mouseY) ? 0xfffff8de : 0xAAFFFFFF);
