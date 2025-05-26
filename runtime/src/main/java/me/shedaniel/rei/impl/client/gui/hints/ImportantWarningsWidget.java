@@ -24,9 +24,7 @@
 package me.shedaniel.rei.impl.client.gui.hints;
 
 import me.shedaniel.math.Rectangle;
-import me.shedaniel.rei.RoughlyEnoughItemsCoreClient;
 import me.shedaniel.rei.api.client.ClientHelper;
-import me.shedaniel.rei.api.client.config.ConfigManager;
 import me.shedaniel.rei.api.client.config.ConfigObject;
 import me.shedaniel.rei.api.client.gui.config.DisplayPanelLocation;
 import me.shedaniel.rei.api.client.gui.widgets.WidgetWithBounds;
@@ -109,8 +107,6 @@ public class ImportantWarningsWidget extends WidgetWithBounds {
         MutableComponent doNotShowText = Component.translatable("text.rei.recipes.not.full.button.do_not_show_again").
                 withStyle(ChatFormatting.RED);
         MutableComponent okayText = Component.translatable("text.rei.recipes.not.full.button.okay");
-        int doNotShowTextWidth = Minecraft.getInstance().font.width(doNotShowText);
-        int okayTextWidth = Minecraft.getInstance().font.width(okayText);
         int boundsMaxY = bounds.getMaxY();
 
         graphics.pose().pushPose();
