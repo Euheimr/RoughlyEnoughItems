@@ -116,6 +116,10 @@ public class ImportantWarningsWidget extends WidgetWithBounds {
         int textHeight = 10;
         int buttonSpacingGap = 6;
 
+        // Note that using "bounds.x" in setBounds(bounds.x, ...) and bounds.getMaxX()
+        //  uses the entire width of the parent box as the clickable area for both
+        //  buttons. The purpose of this is to avoid bugs where the text is not clickable
+        //  as expected on very small or very large Minecraft window sizes
         this.doNotShowButtonBounds.setBounds(bounds.x, boundsMaxY - (textHeight * 2),
                 bounds.getMaxX(), textHeight);
         this.okayButtonBounds.setBounds(bounds.x, boundsMaxY - textHeight + buttonSpacingGap,
