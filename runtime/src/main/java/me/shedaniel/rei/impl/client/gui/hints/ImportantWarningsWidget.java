@@ -136,7 +136,8 @@ public class ImportantWarningsWidget extends WidgetWithBounds {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if ((this.visible && button == 0) && (okayButtonBounds.contains(mouseX, mouseY) || doNotShowButtonBounds.contains(mouseX, mouseY))) {
+        if ((this.visible && button == 0) &&
+                (okayButtonBounds.contains(mouseX, mouseY) || doNotShowButtonBounds.contains(mouseX, mouseY))) {
             dirty = false;
             this.visible = false;
             if (doNotShowButtonBounds.contains(mouseX, mouseY)) {
